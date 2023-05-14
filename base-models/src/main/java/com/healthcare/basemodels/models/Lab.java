@@ -6,19 +6,18 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.io.Serializable;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "ehr")
-public class ElectronicHealthRecord implements Serializable {
+@Document(collection = "labs")
+public class Lab {
     @Id
     private String id;
     private String patientId;
     private String doctorId;
     private String date;
-    private String diagnosis;
-    private String treatment;
+    private String testName;
+    private String result;
     private String notes;
 }
+

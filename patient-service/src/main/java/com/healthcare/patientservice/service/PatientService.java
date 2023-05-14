@@ -1,6 +1,7 @@
 package com.healthcare.patientservice.service;
 
 import com.healthcare.basemodels.models.Patient;
+import com.healthcare.patientservice.kafka.PatientProducer;
 import com.healthcare.patientservice.repository.PatientRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,8 +15,13 @@ public class PatientService {
     @Autowired
     PatientRepo repo;
 
+    @Autowired
+    PatientProducer patientProducer;
+
     public Patient createPatient(Patient patient){
-        return repo.save(patient);
+        Patient newPatient = repo.save(patient);
+        patientProducer.sendMessage(newPatient);
+        return newPatient;
     }
 
     public List<Patient> getAllPatient(){

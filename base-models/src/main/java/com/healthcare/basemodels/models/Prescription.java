@@ -6,13 +6,14 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(collection = "prescription")
-public class Prescription {
+public class Prescription implements Serializable {
     @Id
     private String id;
     private String patientId;
@@ -24,7 +25,7 @@ public class Prescription {
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
-    public static class Medication {
+    public static class Medication implements Serializable {
         private String name;
         private String dosage;
         private String route;

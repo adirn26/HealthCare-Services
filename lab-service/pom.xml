@@ -45,6 +45,16 @@
 			<artifactId>spring-kafka-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.healthcare</groupId>
+			<artifactId>base-models</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>me.paulschwarz</groupId>
+			<artifactId>spring-dotenv</artifactId>
+			<version>4.0.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>

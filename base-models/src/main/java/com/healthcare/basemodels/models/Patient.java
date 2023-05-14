@@ -30,7 +30,7 @@ public class Patient implements Serializable {
     @Builder
     @NoArgsConstructor
     @AllArgsConstructor
-    static class Address {
+    static class Address implements Serializable {
 
         private String street;
         private String city;
@@ -42,7 +42,7 @@ public class Patient implements Serializable {
     @Builder
     @NoArgsConstructor
     @AllArgsConstructor
-    static class Insurance {
+    static class Insurance implements Serializable {
 
         private String providerName;
         private String policyNumber;
